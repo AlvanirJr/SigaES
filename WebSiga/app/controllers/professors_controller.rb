@@ -4,41 +4,29 @@ class ProfessorsController < ApplicationController
   # GET /professors
   # GET /professors.json
   def index
-    if !user_signed_in?
-      redirect_to entrar_path
-    end
     @professors = Professor.all
   end
 
   # GET /professors/1
   # GET /professors/1.json
   def show
-    if !user_signed_in?
-      redirect_to entrar_path
-    end
   end
 
   # GET /professors/new
   def new
-    if !user_signed_in?
-      redirect_to entrar_path
-    end
+
     @professor = Professor.new
   end
 
   # GET /professors/1/edit
   def edit
-    if !user_signed_in?
-      redirect_to entrar_path
-    end
+
   end
 
   # POST /professors
   # POST /professors.json
   def create
-    if !user_signed_in?
-      redirect_to entrar_path
-    end
+
     @professor = Professor.new(professor_params)
 
     respond_to do |format|
@@ -55,9 +43,7 @@ class ProfessorsController < ApplicationController
   # PATCH/PUT /professors/1
   # PATCH/PUT /professors/1.json
   def update
-    if !user_signed_in?
-      redirect_to entrar_path
-    end
+
     respond_to do |format|
       if @professor.update(professor_params)
         format.html { redirect_to @professor, notice: 'Professor was successfully updated.' }
@@ -72,9 +58,7 @@ class ProfessorsController < ApplicationController
   # DELETE /professors/1
   # DELETE /professors/1.json
   def destroy
-    if !user_signed_in?
-      redirect_to entrar_path
-    end
+
     @professor.destroy
     respond_to do |format|
       format.html { redirect_to professors_url, notice: 'Professor was successfully destroyed.' }

@@ -3,40 +3,29 @@ class AlunosController < ApplicationController
 
 
   def index
-    if !user_signed_in?
-      redirect_to entrar_path
-    end
+
     @alunos = Aluno.all
 
   end
 
   def show
-    if !user_signed_in?
-      redirect_to entrar_path
-    end
+
   end
 
   # GET /alunos/new
   def new
-    if !user_signed_in?
-      redirect_to entrar_path
-    end
+
     @aluno = Aluno.new
   end
 
   # GET /alunos/1/edit
   def edit
-    if !user_signed_in?
-      redirect_to entrar_path
-    end
+
   end
 
   # POST /alunos
   # POST /alunos.json
   def create
-    if !user_signed_in?
-      redirect_to entrar_path
-    end
     @aluno = Aluno.new(aluno_params)
 
     respond_to do |format|
@@ -53,9 +42,7 @@ class AlunosController < ApplicationController
   # PATCH/PUT /alunos/1
   # PATCH/PUT /alunos/1.json
   def update
-    if !user_signed_in?
-      redirect_to entrar_path
-    end
+
     respond_to do |format|
       if @aluno.update(aluno_params)
         format.html { redirect_to @aluno, notice: 'Aluno was successfully updated.' }
@@ -70,9 +57,6 @@ class AlunosController < ApplicationController
   # DELETE /alunos/1
   # DELETE /alunos/1.json
   def destroy
-    if !user_signed_in?
-      redirect_to entrar_path
-    end
     @aluno.destroy
     respond_to do |format|
       format.html { redirect_to alunos_url, notice: 'Aluno was successfully destroyed.' }

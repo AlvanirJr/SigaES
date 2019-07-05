@@ -4,5 +4,5 @@ class Disciplina < ApplicationRecord
   validates :cargaHoraria, presence: true, numericality: { greater_than: -1 }
 
   has_many :alunos
-  belongs_to :professors
+  belongs_to :professor
 end
