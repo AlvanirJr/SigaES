@@ -4,9 +4,6 @@ class MenusController < ApplicationController
   # GET /menus
   # GET /menus.json
   def index
-    if !user_signed_in?
-      redirect_to entrar_path
-    end
     @menus = Menu.all
   end
 
