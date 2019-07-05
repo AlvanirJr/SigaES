@@ -1,0 +1,3 @@
+Problemas Encontrados:
+	1- Realizei os passos para o travis, coloquei  arquivo no projeto e tentei fazer o pedido porem não tive retorno esperado.
+	2 - Problema em configurar o HEROKU, trocar o banco não tive sucesso.
