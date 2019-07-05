@@ -21,6 +21,8 @@
         <td> <button style="color:#2E2F30"> <%= link_to 'Visualizar', aluno %> </button></td>
         <td> <button style="color: blue"> <%= link_to 'Editar', edit_aluno_path(aluno) %></button></td>
         <td> <button style="color: #B00100"> <%= link_to 'Excluir', aluno, method: :delete, data: { confirm: 'Você tem certeza?' } %> </button></td>
+        <td> <button style="color: #B00100"> <%= link_to 'Cadastrar aluno em disiplina', aluno, method: :delete, data: { confirm: 'Você tem certeza?' } %> </button></td>
+
       </tr>
     <% end %>
   </tbody>
