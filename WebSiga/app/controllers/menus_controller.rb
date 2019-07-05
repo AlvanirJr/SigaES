@@ -4,10 +4,7 @@ class MenusController < ApplicationController
   # GET /menus
   # GET /menus.json
   def index
-    if !user_signed_in?
-      redirect_to entrar_path
-    end
-    @menus = Menu.all
+    @menu = Menu.all
   end
 
   # GET /menus/1
@@ -15,17 +12,14 @@ class MenusController < ApplicationController
   def show
   end
 
-  # GET /menus/new
   def new
     @menu = Menu.new
   end
 
-  # GET /menus/1/edit
+
   def edit
   end
 
-  # POST /menus
-  # POST /menus.json
   def create
     @menu = Menu.new(menu_params)
 
@@ -40,8 +34,6 @@ class MenusController < ApplicationController
     end
   end
 
-  # PATCH/PUT /menus/1
-  # PATCH/PUT /menus/1.json
   def update
     respond_to do |format|
       if @menu.update(menu_params)
@@ -54,23 +46,19 @@ class MenusController < ApplicationController
     end
   end
 
-  # DELETE /menus/1
-  # DELETE /menus/1.json
-  def destroy
+  def delete
     @menu.destroy
     respond_to do |format|
-      format.html { redirect_to menus_url, notice: 'Menu was successfully destroyed.' }
+      format.html { redirect_to menus_url, notice: 'Menu deletado com sucesso' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_menu
       @menu = Menu.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def menu_params
       params.fetch(:menu, {})
     end
